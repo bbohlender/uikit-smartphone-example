@@ -81,7 +81,7 @@ export function Model(
 ) {
   const [{ page }, api] = useSpring({ page: 0 }, []);
   const group = useRef<THREE.Group>(null);
-  const { nodes, materials, animations } = useGLTF("/phone.glb") as GLTFResult;
+  const { nodes, materials, animations } = useGLTF("phone.glb") as GLTFResult;
   const { actions, mixer } = useAnimations<any>(animations, group);
   const innerTextureRef = useRef<THREE.Texture>(null);
   const outerTextureRef = useRef<THREE.Texture>(null);
@@ -404,4 +404,4 @@ export function Model(
   );
 }
 
-useGLTF.preload("/phone.glb");
+useGLTF.preload("phone.glb");
